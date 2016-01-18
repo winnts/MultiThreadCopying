@@ -37,7 +37,7 @@ public class MultiThreadCopy{
                 public void beforeBulk(long executionId, BulkRequest request) {
 //                            System.out.println("################ " + Thread.currentThread().getName() + " #############################");
 //                            System.out.println("Bulk count = " + numberInIndex);
-//                           System.out.println("Flush count = " + flushCount);
+//                            System.out.println("Flush count = " + flushCount);
 //                            CountResponse countResponse = getCount();
 //                            System.out.println("Total records = " + countResponse.getCount());
 //                            System.out.println("#############################################");
@@ -65,7 +65,7 @@ public class MultiThreadCopy{
                     //.setBulkSize(new ByteSizeValue(5, ByteSizeUnit.MB))
             .setBulkSize(new ByteSizeValue(-1))
             .setFlushInterval(TimeValue.timeValueSeconds(60))
-            .setConcurrentRequests(1)
+            .setConcurrentRequests(0)
             .build();
 
     public void copyESIndices(String fromDate, String toDate) throws IOException {
